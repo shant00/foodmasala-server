@@ -22,7 +22,7 @@ async function run() {
         const database = client.db('Food_Masala');
         const allfoodCollection = database.collection('AllFood');
         const ordersCollection = database.collection('orders');
-
+        const reviewsCollection = database.collection('reviews');
 
 
 
@@ -53,7 +53,7 @@ async function run() {
 
             res.json(result)
         })
-        app.get('/orders', verifyToken, async (req, res) => {
+        app.get('/orders', async (req, res) => {
             const email = req.query.email;
 
 
